@@ -3,6 +3,7 @@ import Image from "next/image";
 import { Inter } from "@next/font/google";
 import styles from "@/styles/Home.module.css";
 import ExternalSiteCard from "../common/ExternalSiteCard";
+import BasicTemplate from "../components/Templates/BasicTemplate";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -36,38 +37,40 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={styles.main}>
-        <div>
-          <div>相曽結 (AISO, Hitoshi)</div>
-          <div>1998年生まれ</div>
-          <div>大阪府出身</div>
-          <div>長岡技術科学大学 情報・経営システム工学分野 修士1年</div>
-          <div>長岡技術科学大学 情報・経営システム工学課程 卒業</div>
-          <div>奈良工業高等専門学校 情報工学科 卒業</div>
-          <div>PL学園中学校 卒業</div>
-        </div>
+      <BasicTemplate>
+        <main className={styles.main}>
+          <div>
+            <div>相曽結 (AISO, Hitoshi)</div>
+            <div>1998年生まれ</div>
+            <div>大阪府出身</div>
+            <div>長岡技術科学大学 情報・経営システム工学分野 修士1年</div>
+            <div>長岡技術科学大学 情報・経営システム工学課程 卒業</div>
+            <div>奈良工業高等専門学校 情報工学科 卒業</div>
+            <div>PL学園中学校 卒業</div>
+          </div>
 
-        <Image
-          // className={styles.logo}
-          src="/profile.jpg"
-          alt="profile image"
-          width="100"
-          height="100"
-          style={{ width: "50%", height: "auto" }}
-        />
-        <h2>外部サイト</h2>
-        <div>
-          {externalWebsites.map((website) => (
-            <ExternalSiteCard
-              key={website.name}
-              siteName={website.name}
-              siteUrl={website.url}
-              siteIcon={website.imageSrc}
-              siteIconDescription={website.imageAlt}
-            />
-          ))}
-        </div>
-      </main>
+          <Image
+            // className={styles.logo}
+            src="/profile.jpg"
+            alt="profile image"
+            width="100"
+            height="100"
+            style={{ width: "50%", height: "auto" }}
+          />
+          <h2>外部サイト</h2>
+          <div>
+            {externalWebsites.map((website) => (
+              <ExternalSiteCard
+                key={website.name}
+                siteName={website.name}
+                siteUrl={website.url}
+                siteIcon={website.imageSrc}
+                siteIconDescription={website.imageAlt}
+              />
+            ))}
+          </div>
+        </main>
+      </BasicTemplate>
     </>
   );
 }
