@@ -6,7 +6,7 @@ import styles from "@/styles/Home.module.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Skills() {
-  const skills: Array<String> = [
+  const skills: string[] = [
     "HTML",
     "CSS",
     "JavaScript",
@@ -32,7 +32,7 @@ export default function Skills() {
         ここにはスキルを書く
         <ul>
           {skills.map((skill) => (
-            <li>{skill}</li>
+            <li key={skill}>{skill}</li>
           ))}
         </ul>
       </main>
